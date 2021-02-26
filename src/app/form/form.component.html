@@ -1,0 +1,9 @@
+<form #todoForm="ngForm" (ngSubmit)="addTodo()">
+  <input
+    type="text"
+    #inputTodo
+    (input)="inputHandler(inputTodo.value)"
+    [value]="value"
+  />
+  <button>Add</button>
+</form>
