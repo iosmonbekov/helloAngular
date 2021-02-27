@@ -1,25 +1,12 @@
 form {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 30px;
-}
-input {
-  flex: 0 1 85%;
 }
 
 button {
-  flex: 0 1 15%;
-  padding: 5px 10px;
   margin-left: 5px;
-  border-radius: 0.2em;
-  color: #ffffff;
-  background-color: #3369ff;
-  box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
-    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
-    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
 }
 
-button.active {
-  box-shadow: inset 0 0.6em 2em -0.3em rgba(0, 0, 0, 0.15),
-    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+.error {
+  color: red;
 }

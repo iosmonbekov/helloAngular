@@ -1,4 +1,10 @@
-<li class="todo">
-  <span>{{ todo.text }}</span>
-  <button (click)="deleteTodo(todo.id)">&times;</button>
-</li>
+<div *ngIf="todos.length !== 0; else noTodos">
+  <li class="todo" *ngFor="let todo of todos">
+    <span>{{ todo.text }}</span>
+    <button class="btn btn-danger" (click)="deleteTodo(todo.id)">
+      &times;
+    </button>
+  </li>
+</div>
+
+<ng-template #noTodos>There is no Todos yet...</ng-template>

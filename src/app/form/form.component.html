@@ -1,9 +1,13 @@
 <form #todoForm="ngForm" (ngSubmit)="addTodo()">
   <input
+    class="form-control"
+    required
     type="text"
-    #inputTodo
-    (input)="inputHandler(inputTodo.value)"
-    [value]="value"
+    name="todo"
+    ngModel
+    #todo="ngModel"
+    [value]="text"
+    (input)="inputHandler(todo.value)"
   />
-  <button>Add</button>
+  <button [disabled]="!text" class="btn btn-primary">Add</button>
 </form>

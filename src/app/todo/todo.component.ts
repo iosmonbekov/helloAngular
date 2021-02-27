@@ -1,4 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
+import { Todo, TodosService } from '../todos.service';
 
 @Component({
   selector: 'app-todo',
@@ -6,10 +7,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./todo.component.css'],
 })
 export class TodoComponent {
-  @Input() todo: any;
+  todos: Todo[] = [];
 
-  @Output() index = new EventEmitter();
   deleteTodo(index: number) {
-    this.index.emit(index);
+    this.todoService.deleteTodo(index);
+  }
+  constructor(private todoService: TodosService) {
+    this.todos = todoService.getTodos();
   }
 }
